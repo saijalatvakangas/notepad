@@ -32,17 +32,64 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-weight: 400;
 }
 
 .list-item {
   display: flex;
   justify-content: flex-start;
-  align-items: baseline;
-  margin: auto;
+  align-items: center;
   padding: 5px 0;
-  max-width: 100%;
+  width: 80%;
   border-bottom: 1px solid #cecece;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
+}
+
+.list-box {
+  margin-right: 10px;
+}
+
+.add-form{
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.add-form > input {
+  flex: 2 0 40%;
+  height: 30px;
+  margin: 2px;
+}
+
+.add-form > button {
+  flex: 1 0 20%;
+  border: none;
+  height: 2em;
+  font-family: VT323, monospace;
+  font-size: 18px;
+  color: white;
+  background: teal;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.delete {
+  margin-left: 10px;
+  background-color: #282c34;
+  color: #cecece;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  border-style: none;
+}
+
+.delete:hover {
+  text-decoration: none;
+  color:#FF0000;
 }
