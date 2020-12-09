@@ -9,14 +9,19 @@ function TodoItem(props) {
 
   return (
     <div className="list-item">
-      <input
-        type="checkbox"
-        checked={ props.item.completed }
-        onChange={ () => props.handleChange(props.item.id) }
-      />
-      <p style={ props.item.completed ? completedStyle : null }>
+      <label style={ props.item.completed ? completedStyle : null }>
+        <input
+          type="checkbox"
+          className="list-box"
+          checked={ props.item.completed }
+          onChange={ () => props.handleChange(props.item.id) }
+        />
         { props.item.text }
-      </p>
+      </label>
+      <button
+        className="delete"
+        onClick={ () => props.handleRemove(props.item.id) }
+      >&times;</button>
     </div>
   );
 }
