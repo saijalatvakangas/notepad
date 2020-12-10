@@ -26,9 +26,7 @@ class App extends Component {
         }
         return todo;
       })
-      return {
-        todos: updatedTodos
-      }
+      return { todos: updatedTodos }
     })
   }
 
@@ -55,7 +53,14 @@ class App extends Component {
   }
 
   handleRemove(id) {
-    console.log("poistetaan", id);
+    let updatedTodos = [];
+    for(let i = 0; i < this.state.todos.length; i++ ) {
+      const todo = this.state.todos[i];
+      if(todo.id !== id) {
+        updatedTodos.push(todo);
+      }
+    }
+    this.setState({ todos: updatedTodos });
   }
 
   render() {
@@ -66,6 +71,11 @@ class App extends Component {
         handleChange = { this.handleChange }
         handleRemove = { this.handleRemove }
       />)
+    const addForm = <AddItem
+      text = { this.state.inputText }
+      handleInputChange = { this.handleInputChange }
+      handleSubmit = { this.handleSubmit }
+    />
 
     return (
       <div className="app">
@@ -73,11 +83,7 @@ class App extends Component {
           <div className="todo-list">
             <Header />
             {this.state.todos.length === 0 ? <p>No Notes</p> : todoItems}
-            <AddItem
-              text = { this.state.inputText }
-              handleInputChange = { this.handleInputChange }
-              handleSubmit = { this.handleSubmit }
-            />
+            {addForm}
           </div>
         </main>
       </div>
