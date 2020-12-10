@@ -1,4 +1,41 @@
-# Getting Started with Create React App
+# Notepad
+
+This is a simple React App used to make To Do List. A base for this project is
+created by following freeCodeCamp.org's [Youtube tutorial](https://www.youtube.com/watch?v=DLX62G4lc44&t=14225s&ab_channel=freeCodeCamp.org). After the tutorial App got following features:
+- Add your own notes instead of reading them from a existing file.
+- Option to remove tasks from the list.
+
+## How to run the application
+
+Clone project to your working directory:
+
+```
+$ git clone git@github.com:saijalatvakangas/notepad.git
+```
+
+Move under the project folder:
+
+```
+$ cd notepad
+```
+
+Install dependencies:
+
+```
+$ npm install
+```
+
+Start the application:
+
+```
+$ npm start
+```
+
+Application should run on your local host [http://localhost:3000](http://localhost:3000).
+
+# The original content of README file
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
