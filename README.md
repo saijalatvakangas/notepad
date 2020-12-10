@@ -1,9 +1,10 @@
 # Notepad
 
 This is a simple React App used to make To Do List. A base for this project is
-created by following freeCodeCamp.org's [YouTube tutorial](https://www.youtube.com/watch?v=DLX62G4lc44&t=14225s&ab_channel=freeCodeCamp.org). After the tutorial App got following features:
+created by following freeCodeCamp.org's [YouTube tutorial](https://www.youtube.com/watch?v=DLX62G4lc44&t=14225s&ab_channel=freeCodeCamp.org). After the tutorial App got following extra features:
 - Add your own notes instead of reading them from a existing file.
 - Option to remove tasks from the list.
+- A web browser remembers user's To Do list.
 
 ## How to run the application
 
