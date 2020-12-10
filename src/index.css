@@ -23,11 +23,19 @@ body {
     0 20px 1px -9px rgba(0,0,0,0.15);
 }
 
+.todo-list > p {
+  height: 44px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 .list-header {
   height: 100px;
   background-color: teal;
   color: whitesmoke;
   width: 100%;
+  margin-bottom: 0.5em;
   font-size: 30px;
   display: flex;
   justify-content: center;

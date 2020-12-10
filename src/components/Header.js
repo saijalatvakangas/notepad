@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="list-header">Muistettavat asiat</header>
+    <header className="list-header">To Do List</header>
   );
 }
 
