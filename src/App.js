@@ -62,6 +62,20 @@ class App extends Component {
     })
   }
 
+  /** fetch tasks from local storage */
+  componentDidMount() {
+    const userData = JSON.parse(localStorage.getItem('data'));
+    if (localStorage.getItem('data')) {
+      this.setState({ todos: userData.todos, inputText: "", noteId: userData.noteId })
+    }
+  }
+
+  /** update local storage */
+  componentDidUpdate(){
+    localStorage.removeItem('data');
+    localStorage.setItem('data', JSON.stringify(this.state));
+  }
+
   render() {
     const todoItems = this.state.todos.map( item =>
       <TodoItem
