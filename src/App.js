@@ -18,6 +18,7 @@ class App extends Component {
     this.handleRemove = this.handleRemove.bind(this);
   }
 
+  /** Change checkbox to ticked or unticked */
   handleChange(id) {
     this.setState( prevState => {
       const updatedTodos = prevState.todos.map(todo => {
@@ -30,37 +31,35 @@ class App extends Component {
     })
   }
 
+  /** Update input text value*/
   handleInputChange = (event) => {
     const {name, value} = event.target;
     this.setState({ [name]: value });
   }
 
+  /** Add new task to To Do List*/
   handleSubmit = (event) => {
     event.preventDefault(); // prevent page refresh
-    if(this.state.inputText !== '') {
-      const newTask = {
-        id: this.state.noteId,
-        text: this.state.inputText,
-        completed: false
-      };
-
-      this.setState( prevState => ({
+    if(this.state.inputText) {
+      this.setState(prevState => ({
         noteId: prevState.noteId + 1,
         inputText: "",
-        todos: [...prevState.todos, newTask]
-      }));
+        todos: [...prevState.todos, {
+          id: prevState.noteId,
+          text: prevState.inputText,
+          completed: false
+        }]
+      }))
     }
   }
 
+  /** Remove task from To Do List */
   handleRemove(id) {
-    let updatedTodos = [];
-    for(let i = 0; i < this.state.todos.length; i++ ) {
-      const todo = this.state.todos[i];
-      if(todo.id !== id) {
-        updatedTodos.push(todo);
-      }
-    }
-    this.setState({ todos: updatedTodos });
+    this.setState(prevState => {
+      const updatedTodos = prevState.todos.filter(todo =>
+        todo.id !== id).map(todo => { return todo })
+        return { todos: updatedTodos }
+    })
   }
 
   render() {
